@@ -184,9 +184,3 @@ let model;
     }
     render();
     console.log("scene:", scene);
-
-
-
-    
-
-    };
