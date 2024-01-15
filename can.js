@@ -187,42 +187,6 @@ let model;
 
 
 
-    // GSAP
-    if ($("#canvas-wpr").length) {
-      let caioTl = gsap.timeline();
-      const el = document.querySelector("#canvas-wpr");
-      let item = el.querySelector("#canvas-wpr canvas");
-
-      // gsap.set(objGroup.rotation, { x: 0.1, y: 0 });
-      gsap.set(objGroup.rotation, { y: 0 });
-
-      caioTl
-        .to(objGroup.rotation, {
-          y: 6.4,
-        })
-        .pause();
-
-
-      ScrollTrigger.create({
-        trigger: "#canvas-wpr",
-        start: "top top",
-        end: "+=100%",
-        animation: caioTl,
-        toggleActions: "play none none none",
-        invalidateOnRefresh: true,
-        scrub: 0.3,
-        pin: true,
-        markers: true,
-        // onEnter: () => ScrollTrigger.refresh(),
-        // onUpdate: (self) => {
-        //   //console.log(self.progress);
-        //   if (self.progress > 0.87) {
-        //     $(".rv-section-rht-col").addClass("present");
-        //   } else {
-        //     $(".rv-section-rht-col").removeClass("present");
-        //   }
-        // },
-      });
-
+    
 
     };
