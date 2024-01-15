@@ -130,7 +130,7 @@ let model;
     // radialSegments : Integer, heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
 
 
-    const texture = new THREE.TextureLoader().load('https://arijit-webskitters.github.io/can-anim/images/wrapper-img/wrap-img.png');
+    const texture = new THREE.TextureLoader().load('https://arijit-webskitters.github.io/can-anim/images/wrap-img.png');
     const geometry = new THREE.CylinderGeometry(0.6256, 0.6256, 3.5, 30, 5, true);
     // const material = new THREE.MeshBasicMaterial({ map: texture });
     // material.side = THREE.DoubleSide;
