@@ -71,7 +71,7 @@ let model;
 
     new THREE.GLTFLoader().load(
       // new THREE.OBJLoader().load(
-      "model3/Can.gltf",
+      "https://arijit-webskitters.github.io/can-anim/model3/Can.gltf",
       // "model2/can.obj",
 
       // called when the resource is loaded
@@ -130,7 +130,7 @@ let model;
     // radialSegments : Integer, heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
 
 
-    const texture = new THREE.TextureLoader().load('images/wrapper-img/wrap-img.png');
+    const texture = new THREE.TextureLoader().load('https://arijit-webskitters.github.io/can-anim/images/wrapper-img/wrap-img.png');
     const geometry = new THREE.CylinderGeometry(0.6256, 0.6256, 3.5, 30, 5, true);
     // const material = new THREE.MeshBasicMaterial({ map: texture });
     // material.side = THREE.DoubleSide;
