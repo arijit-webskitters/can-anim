@@ -188,41 +188,17 @@ let model;
 
 
     // GSAP
-    if ($("#canvas-wprs").length) {
+    if ($("#canvas-wpr").length) {
       let caioTl = gsap.timeline();
       const el = document.querySelector("#canvas-wpr");
       let item = el.querySelector("#canvas-wpr canvas");
 
-      // gsap.set(heading, { opacity: 0, letterSpacing: "-0.1em" });
-      // Splitting({ target: para, by: "chars" });
-      // gsap.set(para, { opacity: 0 });
-      // gsap.set(para.querySelectorAll(".word"), {
-      //   "will-change": "opacity",
-      //   opacity: 0.1,
-      // });
-      // gsap.set(img, { opacity: 0, y: '7vw', scale: 0.7, rotate: -25 });
-      // gsap.set(btn, { opacity: 0, yPercent: 100 });
-      // gsap.set([subheadline, subheadline2], {
-      //   opacity: 0,
-      //   pointerEvents: "none",
-      // });
-
-      // gsap.set(item, { opacity: 0, pointerEvents: "none", y: 150 });
       // gsap.set(objGroup.rotation, { x: 0.1, y: 0 });
       gsap.set(objGroup.rotation, { y: 0 });
 
       caioTl
-        // .to(item, {
-        //   duration: 1.5,
-        //   // letterSpacing: "-0.05em",
-        //   y: 0,
-        //   opacity: 1,
-        // })
         .to(objGroup.rotation, {
-          // duration: 1000,
           y: 6.4,
-          // repeat: -1,
-          // yoyo: true,
         })
         .pause();
 
@@ -248,12 +224,5 @@ let model;
         // },
       });
 
-      // ScrollTrigger.create({
-      //   trigger: el,
-      //   start: "top top",
-      //   end: "+=100%",
-      //   invalidateOnRefresh: true,
-      //   // markers: true,
-      // });
 
     };
