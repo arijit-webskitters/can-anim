@@ -138,7 +138,7 @@ let model2;
 
     console.log("cylinder:", phongMaterial2);
 
-    const cylinder2 = new THREE.Mesh(geometry, phongMaterial);
+    const cylinder2 = new THREE.Mesh(geometry2, phongMaterial2);
 
     // var light = new THREE.PointLight(0xFFFFFF);
     // light.position.set(-10, 15, 50);
@@ -157,7 +157,7 @@ let model2;
     // objGroup.position.x = 1.2;
 
     // // objGroup.applyMatrix( new THREE.Matrix().setTranslation( 0, 10, 0 ) );
-    scene.add(objGroup2);
+    scene2.add(objGroup2);
 
 
     function render2() {
