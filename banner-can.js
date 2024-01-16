@@ -39,17 +39,17 @@ let model2;
     // light1.position.set(0, 5, 5).normalize();
     // light1.position.set(-0.15, 1.5, 1).normalize();
     bannerLight1.castShadow = true;
-    scene.add(bannerLight1);
+    scene2.add(bannerLight1);
 
     const bannerLight2 = new THREE.PointLight(0xFFFFFF, 0.5);
     bannerLight2.position.set(40, 2, 10);
     // light2.castShadow = true;
-    scene.add(bannerLight2);
+    scene2.add(bannerLight2);
 
     const bannerLight3 = new THREE.HemisphereLight(0xFFFFFF, 1);
     bannerLight3.position.set(-0.5, -5, 10);
     // light3.castShadow = true;
-    scene.add(bannerLight3);
+    scene2.add(bannerLight3);
 
     window.addEventListener("resize", function () {
       let width = canvas2.clientWidth,
@@ -66,9 +66,9 @@ let model2;
       // "model2/can.obj",
 
       // called when the resource is loaded
-      function (gltf) {
+      function (gltf2) {
 
-        gltf.scene.traverse(function (node) {
+        gltf2.scene.traverse(function (node) {
           if (node instanceof THREE.Mesh) {
             node.castShadow = true;
             node.material.side = THREE.DoubleSide;
@@ -83,7 +83,7 @@ let model2;
             // node.material.color.setHex(0x282526);
             // node.material.color = "#000";
             // node.material.map = textures[0];
-            model2 = gltf.scene;
+            model2 = gltf2.scene;
 
             console.log("node:", node);
           }
@@ -97,7 +97,7 @@ let model2;
         // model2.position.set(0,-1.2,0);
         // scene.add(model2);
         objGroup2.add(model2);
-        console.log("all anmi:", gltf.animations);
+        console.log("all anmi:", gltf2.animations);
       },
 
       // called while loading is progressing
