@@ -7,7 +7,7 @@ let model2;
       alpha: true,
       antialiase: true,
     });
-    var canvas2 = document.getElementById('canvas-wpr');
+    var canvas2 = document.getElementById('banner-canvas-wpr');
     renderer.setSize(canvas2.clientWidth, canvas2.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     // console.log(canvas2)
