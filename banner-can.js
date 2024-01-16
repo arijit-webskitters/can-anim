@@ -8,8 +8,8 @@ let model2;
       antialiase: true,
     });
     var canvas2 = document.getElementById('banner-canvas-wpr');
-    renderer.setSize(canvas2.clientWidth, canvas2.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer2.setSize(canvas2.clientWidth, canvas2.clientHeight);
+    renderer2.setPixelRatio(window.devicePixelRatio);
     // console.log(canvas2)
     canvas2.appendChild(renderer.domElement);
 
