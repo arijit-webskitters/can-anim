@@ -1,29 +1,29 @@
-let model;
+let model2;
 
     // var objGroup = new THREE.Group();
-    var objGroup = new THREE.Object3D();
+    var objGroup2 = new THREE.Object3D();
 
-    const renderer = new THREE.WebGLRenderer({
+    const renderer2 = new THREE.WebGLRenderer({
       alpha: true,
       antialiase: true,
     });
-    var canvas1 = document.getElementById('canvas-wpr');
-    renderer.setSize(canvas1.clientWidth, canvas1.clientHeight);
+    var canvas2 = document.getElementById('canvas-wpr');
+    renderer.setSize(canvas2.clientWidth, canvas2.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    // console.log(canvas1)
-    canvas1.appendChild(renderer.domElement);
+    // console.log(canvas2)
+    canvas2.appendChild(renderer.domElement);
 
-    const scene = new THREE.Scene();
+    const scene2 = new THREE.Scene();
 
-    const camera = new THREE.PerspectiveCamera(
+    const camera2 = new THREE.PerspectiveCamera(
       75,
-      canvas1.clientWidth / canvas1.clientHeight,
+      canvas2.clientWidth / canvas2.clientHeight,
       0.1,
       1000
     );
-    camera.position.z = 5;
-    camera.position.y = 2.1;
-    camera.lookAt(new THREE.Vector3(0, 2.1, 0));
+    camera2.position.z = 5;
+    camera2.position.y = 2.1;
+    camera2.lookAt(new THREE.Vector3(0, 2.1, 0));
 
 
     // const controls = new THREE.OrbitControls(
@@ -33,30 +33,30 @@ let model;
     // controls.target.z = 100;
 
     // const ambLight = new THREE.AmbientLight("#d6d6d6", 5);
-    const light1 = new THREE.DirectionalLight("#fff", 0.2);
-    light1.position.set(-60, 15, 10).normalize();
+    const bannerLight1 = new THREE.DirectionalLight("#fff", 0.2);
+    bannerLight1.position.set(-60, 15, 10).normalize();
     // light1.rotation.set(0, 0, 0);
     // light1.position.set(0, 5, 5).normalize();
     // light1.position.set(-0.15, 1.5, 1).normalize();
-    light1.castShadow = true;
-    scene.add(light1);
+    bannerLight1.castShadow = true;
+    scene.add(bannerLight1);
 
-    const light2 = new THREE.PointLight(0xFFFFFF, 0.5);
-    light2.position.set(40, 2, 10);
+    const bannerLight2 = new THREE.PointLight(0xFFFFFF, 0.5);
+    bannerLight2.position.set(40, 2, 10);
     // light2.castShadow = true;
-    scene.add(light2);
+    scene.add(bannerLight2);
 
-    const light3 = new THREE.HemisphereLight(0xFFFFFF, 1);
-    light3.position.set(-0.5, -5, 10);
+    const bannerLight3 = new THREE.HemisphereLight(0xFFFFFF, 1);
+    bannerLight3.position.set(-0.5, -5, 10);
     // light3.castShadow = true;
-    scene.add(light3);
+    scene.add(bannerLight3);
 
     window.addEventListener("resize", function () {
-      let width = canvas1.clientWidth,
-        height = canvas1.clientHeight;
-      renderer.setSize(width, height);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
+      let width = canvas2.clientWidth,
+        height = canvas2.clientHeight;
+      renderer2.setSize(width, height);
+      camera2.aspect = width / height;
+      camera2.updateProjectionMatrix();
     });
 
 
@@ -83,20 +83,20 @@ let model;
             // node.material.color.setHex(0x282526);
             // node.material.color = "#000";
             // node.material.map = textures[0];
-            model = gltf.scene;
+            model2 = gltf.scene;
 
             console.log("node:", node);
           }
         });
 
-        // model.textures = textures;
-        // model.scale.set(0.35, 0.35, 0.35);
-        // model.scale.set(0.1, 0.1, 0.1);
-        // model.scale.set(12, 12, 12);
-        model.scale.set(1, 1, 1);
-        // model.position.set(0,-1.2,0);
-        // scene.add(model);
-        objGroup.add(model);
+        // model2.textures = textures;
+        // model2.scale.set(0.35, 0.35, 0.35);
+        // model2.scale.set(0.1, 0.1, 0.1);
+        // model2.scale.set(12, 12, 12);
+        model2.scale.set(1, 1, 1);
+        // model2.position.set(0,-1.2,0);
+        // scene.add(model2);
+        objGroup2.add(model2);
         console.log("all anmi:", gltf.animations);
       },
 
@@ -121,57 +121,48 @@ let model;
     // radialSegments : Integer, heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
 
 
-    const texture = new THREE.TextureLoader().load('https://arijit-webskitters.github.io/can-anim/images/wrap-img.png');
-    const geometry = new THREE.CylinderGeometry(0.6765, 0.6765, 3.61, 30, 5, true);
+    const texture2 = new THREE.TextureLoader().load('https://arijit-webskitters.github.io/can-anim/images/wrap-img.png');
+    const geometry2 = new THREE.CylinderGeometry(0.6765, 0.6765, 3.61, 30, 5, true);
     // const material = new THREE.MeshBasicMaterial({ map: texture });
     // material.side = THREE.DoubleSide;
     // const cylinder = new THREE.Mesh(geometry, material);
 
-    var phongMaterial = new THREE.MeshPhongMaterial({
+    var phongMaterial2 = new THREE.MeshPhongMaterial({
       map: texture,
       shininess: 800,
       // alphaMap: texture,
       // blending: 1,
       // transparent: true,
     });
-    phongMaterial.side = THREE.DoubleSide;
+    phongMaterial2.side = THREE.DoubleSide;
 
-    console.log("cylinder:", phongMaterial);
+    console.log("cylinder:", phongMaterial2);
 
-    const cylinder = new THREE.Mesh(geometry, phongMaterial);
+    const cylinder2 = new THREE.Mesh(geometry, phongMaterial);
 
     // var light = new THREE.PointLight(0xFFFFFF);
     // light.position.set(-10, 15, 50);
     // scene.add(light);
 
     // cylinder.rotation.set(0, (Math.PI / 1.1), 0);
-    cylinder.rotation.set(0, (Math.PI / 1.1), 0);
+    cylinder2.rotation.set(0, (Math.PI / 1.1), 0);
     // cylinder.position.set(-0.265, 1.75, 0.2);
-    cylinder.position.set(0, 1.895, 0);
+    cylinder2.position.set(0, 1.895, 0);
     // cylinder.position.set(-0.265,0.55,0.2);
     // scene.add(cylinder);
 
 
-    objGroup.add(cylinder);
-    objGroup.position.z = 1.2;
+    objGroup2.add(cylinder2);
+    objGroup2.position.z = 1.2;
     // objGroup.position.x = 1.2;
 
     // // objGroup.applyMatrix( new THREE.Matrix().setTranslation( 0, 10, 0 ) );
-    scene.add(objGroup);
+    scene.add(objGroup2);
 
 
-
-    // gsap.to(objGroup.rotation, {
-    //   duration: 1000,
-    //   y: 360,
-    //   repeat: -1,
-    //   // yoyo: true,
-    // })
-
-
-    function render() {
-      requestAnimationFrame(render);
-      renderer.render(scene, camera);
+    function render2() {
+      requestAnimationFrame(render2);
+      renderer2.render(scene2, camera2);
     }
-    render();
-    console.log("scene:", scene);
+    render2();
+    console.log("scene:", scene2);
