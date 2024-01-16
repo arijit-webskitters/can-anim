@@ -11,7 +11,7 @@ let model2;
     renderer2.setSize(canvas2.clientWidth, canvas2.clientHeight);
     renderer2.setPixelRatio(window.devicePixelRatio);
     // console.log(canvas2)
-    canvas2.appendChild(renderer.domElement);
+    canvas2.appendChild(renderer2.domElement);
 
     const scene2 = new THREE.Scene();
 
