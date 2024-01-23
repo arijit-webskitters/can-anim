@@ -104,7 +104,7 @@ let model2;
         // model2.scale.set(0.35, 0.35, 0.35);
         // model2.scale.set(0.1, 0.1, 0.1);
         // model2.scale.set(12, 12, 12);
-        model2.scale.set(1.2, 1.2, 1.2);
+        model2.scale.set(1.1, 1.1, 1.1);
         // model2.position.set(0,-1.2,0);
         // scene.add(model2);
         objGroup2.add(model2);
@@ -166,7 +166,7 @@ let model2;
 
 
     // objGroup2.add(cylinder2);
-    objGroup2.position.y = 0.3;
+    objGroup2.position.y = 0.2;
     objGroup2.position.z = 1.2;
     // objGroup.position.x = 1.2;
 
