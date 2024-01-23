@@ -33,23 +33,28 @@ let model2;
     // controls.target.z = 100;
 
     // const ambLight = new THREE.AmbientLight("#d6d6d6", 5);
-    const bannerLight1 = new THREE.DirectionalLight("#fff", 0.2);
-    bannerLight1.position.set(-60, 15, 10).normalize();
-    // light1.rotation.set(0, 0, 0);
-    // light1.position.set(0, 5, 5).normalize();
-    // light1.position.set(-0.15, 1.5, 1).normalize();
-    bannerLight1.castShadow = true;
+    const ambLight = new THREE.AmbientLight(0x8ae8ff, 5);
+    const bannerLight1 = new THREE.DirectionalLight(0x8ae8ff, 0.05);
+    bannerLight1.position.set(400, 100, 100);
+    bannerLight1.rotation.set(0, 2, -0.4);
     scene2.add(bannerLight1);
 
-    const bannerLight2 = new THREE.PointLight(0xFFFFFF, 0.5);
-    bannerLight2.position.set(40, 2, 10);
-    // light2.castShadow = true;
-    scene2.add(bannerLight2);
+    const bannerLight2 = new THREE.DirectionalLight( 0x8ae8ff, 0.05, 1);
+    // const helper = new THREE.DirectionalLightHelper( bannerLight2, 0.5 );
+    // scene2.add( helper );
+    bannerLight2.position.set( -10,-5,-3 );
+    bannerLight2.rotation.set(0.3,0,2.2 );
+    scene2.add( bannerLight2 );
 
-    const bannerLight3 = new THREE.HemisphereLight(0xFFFFFF, 1);
-    bannerLight3.position.set(-0.5, -5, 10);
-    // light3.castShadow = true;
+    const bannerLight3 = new THREE.HemisphereLight(0x8ae8ff, 0.05);
+    bannerLight3.position.set(0,1.5,10);
+    bannerLight3.rotation.set(1.5,0,0);
     scene2.add(bannerLight3);
+
+    const bannerLight4 = new THREE.HemisphereLight("#fff", 0.1);
+    bannerLight4.position.set(-0.5, -5, 10);
+    // bannerLight4.castShadow = true;
+    scene2.add(bannerLight4);
 
     window.addEventListener("resize", function () {
       let width = canvas2.clientWidth,
@@ -62,7 +67,7 @@ let model2;
 
     new THREE.GLTFLoader().load(
       // new THREE.OBJLoader().load(
-      "https://arijit-webskitters.github.io/can-anim/model4/Untitled.gltf",
+      "https://arijit-webskitters.github.io/can-anim/model5/Can_Mat_baseColor.png",
       // "model2/can.obj",
 
       // called when the resource is loaded
@@ -71,8 +76,12 @@ let model2;
         gltf2.scene.traverse(function (node) {
           if (node instanceof THREE.Mesh) {
             node.castShadow = true;
+            node.material.map.minFilter = THREE.LinearFilter;
             node.material.side = THREE.DoubleSide;
             node.material.flatShading = false;
+            node.material.metalness = 0.8;
+            node.material.shading = THREE.SmoothShading;
+
             // node.material.blendDst = 1;
             // node.material.needsUpdate = true;
             // node.material.metalness = 1;
@@ -154,7 +163,7 @@ let model2;
     // scene.add(cylinder);
 
 
-    objGroup2.add(cylinder2);
+    // objGroup2.add(cylinder2);
     objGroup2.position.z = 1.2;
     // objGroup.position.x = 1.2;
 
