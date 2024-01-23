@@ -70,9 +70,14 @@ let model;
 
         gltf.scene.traverse(function (node) {
           if (node instanceof THREE.Mesh) {
-            node.castShadow = true;
+            //node.castShadow = true;
+            //node.material.side = THREE.DoubleSide;
+            //node.material.flatShading = false;
+
+              node.castShadow = true;
+            node.material.map.minFilter = THREE.LinearFilter;
             node.material.side = THREE.DoubleSide;
-            node.material.flatShading = false;
+            node.material.flatShading =  THREE.SmoothShading;
             // node.material.blendDst = 1;
             // node.material.needsUpdate = true;
             // node.material.metalness = 1;
@@ -135,6 +140,8 @@ let model;
       // transparent: true,
     });
     phongMaterial.side = THREE.DoubleSide;
+    phongMaterial.map.minFilter = THREE.LinearFilter;
+    phongMaterial.shading = THREE.SmoothShading;
 
     console.log("cylinder:", phongMaterial);
 
