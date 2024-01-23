@@ -69,7 +69,7 @@ let model2;
 
     new THREE.GLTFLoader().load(
       // new THREE.OBJLoader().load(
-      "model5/asset.gltf",
+      "https://arijit-webskitters.github.io/can-anim/model5/asset.gltf",
       // "model2/can.obj",
 
       // called when the resource is loaded
