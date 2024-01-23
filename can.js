@@ -103,7 +103,7 @@ let model;
         // model.scale.set(0.35, 0.35, 0.35);
         // model.scale.set(0.1, 0.1, 0.1);
         // model.scale.set(12, 12, 12);
-        model.scale.set(1.1, 1.1, 1.1);
+        model.scale.set(1.15, 1.15, 1.15);
         // model.position.set(0,-1.2,0);
         // scene.add(model);
         objGroup.add(model);
