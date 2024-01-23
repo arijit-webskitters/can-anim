@@ -165,7 +165,7 @@ let model;
 
 
     // objGroup.add(cylinder);
-    objGroup.position.y = 0.2;
+    objGroup.position.y = 0.1;
     objGroup.position.z = 1.2;
     // objGroup.position.x = 1.2;
 
