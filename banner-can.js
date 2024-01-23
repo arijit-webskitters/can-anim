@@ -69,7 +69,7 @@ let model2;
 
     new THREE.GLTFLoader().load(
       // new THREE.OBJLoader().load(
-      "https://arijit-webskitters.github.io/can-anim/model5/asset.gltf",
+      "model5/asset.gltf",
       // "model2/can.obj",
 
       // called when the resource is loaded
@@ -104,7 +104,7 @@ let model2;
         // model2.scale.set(0.35, 0.35, 0.35);
         // model2.scale.set(0.1, 0.1, 0.1);
         // model2.scale.set(12, 12, 12);
-        model2.scale.set(1, 1, 1);
+        model2.scale.set(1.2, 1.2, 1.2);
         // model2.position.set(0,-1.2,0);
         // scene.add(model2);
         objGroup2.add(model2);
@@ -132,7 +132,7 @@ let model2;
     // radialSegments : Integer, heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
 
 
-    const texture2 = new THREE.TextureLoader().load('images/wrap-img.png');
+    const texture2 = new THREE.TextureLoader().load('https://arijit-webskitters.github.io/can-anim/images/wrap-img.png');
     const geometry2 = new THREE.CylinderGeometry(0.6765, 0.6765, 3.61, 30, 5, true);
     // const material = new THREE.MeshBasicMaterial({ map: texture });
     // material.side = THREE.DoubleSide;
@@ -166,6 +166,7 @@ let model2;
 
 
     // objGroup2.add(cylinder2);
+    objGroup2.position.y = 0.3;
     objGroup2.position.z = 1.2;
     // objGroup.position.x = 1.2;
 
