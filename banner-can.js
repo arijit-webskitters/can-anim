@@ -10,6 +10,8 @@ let model2;
     var canvas2 = document.getElementById('banner-canvas-wpr');
     renderer2.setSize(canvas2.clientWidth, canvas2.clientHeight);
     renderer2.setPixelRatio(window.devicePixelRatio);
+    renderer2.outputEncoding = THREE.sRGBEncoding;
+    renderer2.toneMapping  = THREE.LinearToneMapping ;
     // console.log(canvas2)
     canvas2.appendChild(renderer2.domElement);
 
@@ -67,7 +69,7 @@ let model2;
 
     new THREE.GLTFLoader().load(
       // new THREE.OBJLoader().load(
-      "https://arijit-webskitters.github.io/can-anim/model5/Can_Mat_baseColor.png",
+      "model5/asset.gltf",
       // "model2/can.obj",
 
       // called when the resource is loaded
@@ -130,14 +132,14 @@ let model2;
     // radialSegments : Integer, heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
 
 
-    const texture2 = new THREE.TextureLoader().load('https://arijit-webskitters.github.io/can-anim/images/wrap-img.png');
+    const texture2 = new THREE.TextureLoader().load('images/wrap-img.png');
     const geometry2 = new THREE.CylinderGeometry(0.6765, 0.6765, 3.61, 30, 5, true);
     // const material = new THREE.MeshBasicMaterial({ map: texture });
     // material.side = THREE.DoubleSide;
     // const cylinder = new THREE.Mesh(geometry, material);
 
     var phongMaterial2 = new THREE.MeshPhongMaterial({
-      map: texture,
+      map: texture2,
       shininess: 800,
       // alphaMap: texture,
       // blending: 1,
