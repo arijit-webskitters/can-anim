@@ -35,7 +35,7 @@ let model;
     // controls.target.z = 100;
 
     // const ambLight = new THREE.AmbientLight("#d6d6d6", 5);
-    const ambLight = new THREE.AmbientLight(0x8ae8ff, 5);
+    const ambLight2 = new THREE.AmbientLight(0x8ae8ff, 5);
     const light1 = new THREE.DirectionalLight(0x8ae8ff, 0.05);
     light1.position.set(400, 100, 100);
     light1.rotation.set(0, 2, -0.4);
