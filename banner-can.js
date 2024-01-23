@@ -135,6 +135,8 @@ let model2;
       // transparent: true,
     });
     phongMaterial2.side = THREE.DoubleSide;
+    phongMaterial2.map.minFilter = THREE.LinearFilter;
+    phongMaterial2.shading = THREE.SmoothShading;
 
     console.log("cylinder:", phongMaterial2);
 
