@@ -120,7 +120,7 @@ function cnvasMove(){
     });
     //window.requestAnimationFrame(animate);
   }
-  canvas2.addEventListener("mousemove", function (e) {
+  window.addEventListener("mousemove", function (e) {
     // var lMouseX = Math.max(
     //   -100,
     //   Math.min(100, window.innerWidth / 2 - e.clientX)
@@ -132,14 +132,14 @@ function cnvasMove(){
     var lMouseX = Math.min(100, window.innerWidth / 2 - e.clientX),
       lMouseY = Math.min(100, window.innerHeight / 2 - e.clientY);
     lFollowX = (2 * lMouseX) / 2500;
-    lFollowY = (2 * lMouseY) / 3000;
+    lFollowY = (2 * lMouseY) / 2000;
     console.log('lMouseX:',lMouseX,'lMouseY:',lMouseY);
     animate();
   });
   animate();
 
 
-  canvas2.addEventListener("mouseout", function () {
+  window.addEventListener("mouseout", function () {
     gsap.to(outerObjGroup.rotation, {
       x: 0,
       y: 0,
