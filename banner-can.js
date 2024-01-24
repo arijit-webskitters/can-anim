@@ -100,15 +100,6 @@ render2();
 
 /*---*/
 function cnvasMove(){
-  canvas2.addEventListener("mouseout", function () {
-    gsap.to(outerObjGroup.rotation, {
-      x: 0,
-      y: 0,
-      z: 0,
-      duration: 0.2,
-      ease: "none",
-    });
-  });
   var lFollowX = 0,
     lFollowY = 0,
     x = 0,
@@ -136,9 +127,19 @@ function cnvasMove(){
         -100,
         Math.min(100, canvas2.clientHeight / 2 - e.clientY)
       );
-    lFollowX = (2 * lMouseX) / 50;
-    lFollowY = (2 * lMouseY) / 20000;
+    lFollowX = (2 * lMouseX) / 500;
+    lFollowY = (2 * lMouseY) / 2000;
   });
   animate();
+
+  canvas2.addEventListener("mouseout", function () {
+    gsap.to(outerObjGroup.rotation, {
+      x: 0,
+      y: 0,
+      z: 0,
+      duration: 0.2,
+      ease: "none",
+    });
+  });
 }
 
