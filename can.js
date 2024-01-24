@@ -5,7 +5,7 @@ let model;
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialiase: true,
+      antialias: true,
     });
     var canvas1 = document.getElementById('canvas-wpr');
     renderer.setSize(canvas1.clientWidth, canvas1.clientHeight);
