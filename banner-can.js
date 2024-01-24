@@ -112,11 +112,11 @@ function cnvasMove(){
     y += (lFollowY - y) * friction;
     // console.log(x,y)
   
-    gsap.to(outerObjGroup.rotation, {
+    gsap.set(outerObjGroup.rotation, {
       x: y,
       y: -x,
       z: 0,
-      duration: 0.2
+      // duration: 0.2
     });
     //window.requestAnimationFrame(animate);
   }
@@ -132,8 +132,8 @@ function cnvasMove(){
     var lMouseX = Math.min(100, window.innerWidth / 2 - e.clientX),
       lMouseY = Math.min(100, window.innerHeight / 2 - e.clientY);
     lFollowX = (2 * lMouseX) / 2500;
-    lFollowY = (2 * lMouseY) / 2000;
-    console.log('lMouseX:',lMouseX,'lMouseY:',lMouseY);
+    lFollowY = (2 * lMouseY) / 2500;
+    // console.log('lMouseX:',lMouseX,'lMouseY:',lMouseY);
     animate();
   });
   animate();
