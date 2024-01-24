@@ -45,8 +45,8 @@ window.addEventListener("resize", function () {
   render2();
 });
 
-const texture = new THREE.TextureLoader().load("https://arijit-webskitters.github.io/can-anim/model6/world.jpg");
-texture.mapping = THREE.EquirectangularReflectionMapping;
+const texture2 = new THREE.TextureLoader().load("https://arijit-webskitters.github.io/can-anim/model6/world.jpg");
+texture2.mapping = THREE.EquirectangularReflectionMapping;
 scene2.castShadow = true;
 scene2.matrixWorldNeedsUpdate = true;
 
@@ -64,7 +64,7 @@ ff.load(
         model2 = gltf2.scene;
         node.material.flatShading = false;
         node.material.metalness = 0.8;
-        node.material.envMap = texture;
+        node.material.envMap = texture2;
         node.material.envMapIntensity = 2;
 
         console.log(node);
