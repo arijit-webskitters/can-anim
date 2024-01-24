@@ -42,7 +42,7 @@ window.addEventListener("resize", function () {
   renderer.setSize(width, height);
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
-  render2();
+  render();
 });
 
 const texture = new THREE.TextureLoader().load("https://arijit-webskitters.github.io/can-anim/model6/world.jpg");
@@ -91,11 +91,11 @@ outerObjGroup1.position.z = 1.2;
 
 scene.add(outerObjGroup1);
 
-function render2() {
+function render() {
   renderer.render(scene, camera);
-  requestAnimationFrame(render2);
+  requestAnimationFrame(render);
 }
-render2();
+render();
 
 /*---*/
 // canvas.addEventListener("mouseout", function () {
