@@ -109,16 +109,19 @@ function cnvasMove(){
   function animate() {
     x += (lFollowX - x) * friction;
     y += (lFollowY - y) * friction;
+    console.log(x,y)
   
-    gsap.set(outerObjGroup.rotation, {
+    gsap.to(outerObjGroup.rotation, {
       x: y,
       y: -x,
       z: 0,
+      duration: 0.2
     });
-    window.requestAnimationFrame(animate);
+    //window.requestAnimationFrame(animate);
   }
   
   canvas2.addEventListener("mousemove", function (e) {
+    console.log(e.clientX,e.clientY)
     var lMouseX = Math.max(
         -100,
         Math.min(100, canvas2.clientWidth / 2 - e.clientX)
@@ -129,8 +132,11 @@ function cnvasMove(){
       );
     lFollowX = (2 * lMouseX) / 500;
     lFollowY = (2 * lMouseY) / 2000;
+    console.log(lFollowX,lFollowY)
+    animate();
   });
   animate();
+
 
   canvas2.addEventListener("mouseout", function () {
     gsap.to(outerObjGroup.rotation, {
