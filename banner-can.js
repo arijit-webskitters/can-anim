@@ -99,43 +99,46 @@ function render2() {
 render2();
 
 /*---*/
-canvas2.addEventListener("mouseout", function () {
-  gsap.to(outerObjGroup.rotation, {
-    x: 0,
-    y: 0,
-    z: 0,
-    duration: 0.2,
-    ease: "none",
+function cnvasMove(){
+  canvas2.addEventListener("mouseout", function () {
+    gsap.to(outerObjGroup.rotation, {
+      x: 0,
+      y: 0,
+      z: 0,
+      duration: 0.2,
+      ease: "none",
+    });
   });
-});
-var lFollowX = 0,
-  lFollowY = 0,
-  x = 0,
-  y = 0,
-  friction = 1 / 12;
-
-function animate() {
-  x += (lFollowX - x) * friction;
-  y += (lFollowY - y) * friction;
-
-  gsap.set(outerObjGroup.rotation, {
-    x: y,
-    y: -x,
-    z: 0,
+  var lFollowX = 0,
+    lFollowY = 0,
+    x = 0,
+    y = 0,
+    friction = 1 / 12;
+  
+  function animate() {
+    x += (lFollowX - x) * friction;
+    y += (lFollowY - y) * friction;
+  
+    gsap.set(outerObjGroup.rotation, {
+      x: y,
+      y: -x,
+      z: 0,
+    });
+    window.requestAnimationFrame(animate);
+  }
+  
+  canvas2.addEventListener("mousemove", function (e) {
+    var lMouseX = Math.max(
+        -100,
+        Math.min(100, canvas2.clientWidth / 2 - e.clientX)
+      ),
+      lMouseY = Math.max(
+        -100,
+        Math.min(100, canvas2.clientHeight / 2 - e.clientY)
+      );
+    lFollowX = (2 * lMouseX) / 500;
+    lFollowY = (2 * lMouseY) / 2000;
   });
-  window.requestAnimationFrame(animate);
+  animate();
 }
 
-canvas2.addEventListener("mousemove", function (e) {
-  var lMouseX = Math.max(
-      -100,
-      Math.min(100, canvas2.clientWidth / 2 - e.clientX)
-    ),
-    lMouseY = Math.max(
-      -100,
-      Math.min(100, canvas2.clientHeight / 2 - e.clientY)
-    );
-  lFollowX = (2 * lMouseX) / 500;
-  lFollowY = (2 * lMouseY) / 2000;
-});
-animate();
