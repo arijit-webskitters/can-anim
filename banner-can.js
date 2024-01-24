@@ -112,11 +112,12 @@ function cnvasMove(){
     y += (lFollowY - y) * friction;
     // console.log(x,y)
   
-    gsap.set(outerObjGroup.rotation, {
+    gsap.to(outerObjGroup.rotation, {
       x: y,
       y: -x,
       z: 0,
-      // duration: 0.2
+      duration: 0.1,
+      ease: "none",
     });
     //window.requestAnimationFrame(animate);
   }
@@ -138,7 +139,7 @@ function cnvasMove(){
   });
   animate();
 
-
+/*
   window.addEventListener("mouseout", function () {
     gsap.to(outerObjGroup.rotation, {
       x: 0,
@@ -147,6 +148,6 @@ function cnvasMove(){
       duration: 0.2,
       ease: "none",
     });
-  });
+  });*/
 }
 
