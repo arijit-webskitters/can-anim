@@ -121,14 +121,16 @@ function cnvasMove(){
     //window.requestAnimationFrame(animate);
   }
   canvas2.addEventListener("mousemove", function (e) {
-    var lMouseX = Math.max(
-        -100,
-        Math.min(100, window.innerWidth / 2 - e.clientX)
-      ),
-      lMouseY = Math.max(
-        -100,
-        Math.min(100, window.innerHeight / 2 - e.clientY)
-      );
+    // var lMouseX = Math.max(
+    //   -100,
+    //   Math.min(100, window.innerWidth / 2 - e.clientX)
+    //   ),
+    //   lMouseY = Math.max(
+    //     -100,
+    //     Math.min(100, window.innerHeight / 2 - e.clientY)
+    //   );
+    var lMouseX = Math.min(100, window.innerWidth / 2 - e.clientX),
+      lMouseY = Math.min(100, window.innerHeight / 2 - e.clientY);
     lFollowX = (2 * lMouseX) / 500;
     lFollowY = (2 * lMouseY) / 2000;
     console.log('lMouseX:',lMouseX,'lMouseY:',lMouseY);
