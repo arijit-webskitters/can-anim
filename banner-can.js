@@ -132,7 +132,7 @@ function cnvasMove(){
       );
     lFollowX = (2 * lMouseX) / 500;
     lFollowY = (2 * lMouseY) / 2000;
-    console.log('lMouseX':,lMouseX,'lMouseY',lMouseY)
+    console.log('lMouseX:',lMouseX,'lMouseY:',lMouseY)
     console.log(lFollowX,lFollowY)
     animate();
   });
