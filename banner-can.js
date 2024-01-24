@@ -114,7 +114,7 @@ function cnvasMove(){
   
     gsap.to(outerObjGroup.rotation, {
       x: y,
-      y: -x,
+      y: -x/2,
       z: 0,
       duration: 0.1,
       ease: "none",
