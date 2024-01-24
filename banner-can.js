@@ -131,8 +131,8 @@ function cnvasMove(){
     //   );
     var lMouseX = Math.min(100, window.innerWidth / 2 - e.clientX),
       lMouseY = Math.min(100, window.innerHeight / 2 - e.clientY);
-    lFollowX = (2 * lMouseX) / 500;
-    lFollowY = (2 * lMouseY) / 2000;
+    lFollowX = (2 * lMouseX) / 2500;
+    lFollowY = (2 * lMouseY) / 3000;
     console.log('lMouseX:',lMouseX,'lMouseY:',lMouseY);
     animate();
   });
