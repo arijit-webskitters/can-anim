@@ -136,7 +136,7 @@ function cnvasMove(){
         -100,
         Math.min(100, canvas2.clientHeight / 2 - e.clientY)
       );
-    lFollowX = (2 * lMouseX) / 500;
+    lFollowX = (2 * lMouseX) / 5000;
     lFollowY = (2 * lMouseY) / 2000;
   });
   animate();
