@@ -45,13 +45,13 @@ window.addEventListener("resize", function () {
   render();
 });
 
-const texture = new THREE.TextureLoader().load("model6/world.jpg");
+const texture = new THREE.TextureLoader().load("https://arijit-webskitters.github.io/can-anim/model6/world.jpg");
 texture.mapping = THREE.EquirectangularReflectionMapping;
 scene.castShadow = true;
 scene.matrixWorldNeedsUpdate = true;
 
 new THREE.GLTFLoader().load(
-  "model6/asset.gltf",
+  "https://arijit-webskitters.github.io/can-anim/model6/asset.gltf",
 
   // called when the resource is loaded
   function (gltf) {
